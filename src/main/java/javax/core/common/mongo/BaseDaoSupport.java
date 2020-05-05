@@ -12,14 +12,13 @@ import java.util.List;
  */
 public abstract class BaseDaoSupport<T extends Serializable,PK extends Serializable> {
 
-//    Logger logger = Lo
 
     private MongoTemplate mongoTemplate;
-    private EntiyOperation<T> op;
+    private EntityOperation<T> op;
 
     public BaseDaoSupport(){
         Class<T> entityClass = GenericsUtils.getSuperClassGenricType(getClass(),0);
-        op = new EntiyOperation<T>(entityClass);
+        op = new EntityOperation<T>(entityClass);
     }
 
     protected void setTempate(MongoTemplate tempate){
@@ -35,7 +34,7 @@ public abstract class BaseDaoSupport<T extends Serializable,PK extends Serializa
         QueryRuleBulider bulider = new QueryRuleBulider(queryRule);
         Query query = bulider.getQuery();
 
-        return mongoTemplate.find(query,op.entiyClass);
+        return mongoTemplate.find(query,op.entityClass);
     }
 
 
@@ -51,7 +50,7 @@ public abstract class BaseDaoSupport<T extends Serializable,PK extends Serializa
         QueryRuleBulider bulider = new QueryRuleBulider(queryRule);
         Query query = bulider.getQuery();
 
-        return mongoTemplate.findOne(query,op.entiyClass);
+        return mongoTemplate.findOne(query,op.entityClass);
     }
 
     protected int delete(T entity){

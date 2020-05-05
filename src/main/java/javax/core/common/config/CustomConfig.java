@@ -143,7 +143,8 @@ public class CustomConfig extends PropertyPlaceholderConfigurer{
       
     /** 
      * 解析占位符具体操作 
-     * @param property 
+     * @param prots
+     * @param value
      * @return 
      */  
     private String resolvePlaceHolder(Properties prots,String value) {  
@@ -180,7 +181,8 @@ public class CustomConfig extends PropertyPlaceholderConfigurer{
 
     /** 
      * 获得系统属性 当然 你可以选择从别的地方获取值 
-     * @param systemPropertyName 
+     * @param prots
+     * @param key
      * @return 
      */  
     private String extractFromSystem(Properties prots,String key) {  

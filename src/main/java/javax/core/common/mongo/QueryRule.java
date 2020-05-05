@@ -9,8 +9,7 @@ import java.util.List;
  * 
  * @author harrypotter
  */
-public final class QueryRule implements Serializable
-{
+public final class QueryRule implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public static final int ASC_ORDER = 101;
 	public static final int DESC_ORDER = 102;
